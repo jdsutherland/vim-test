@@ -19,12 +19,12 @@ function! test#csharp#dotnettest#build_position(type, position) abort
   if a:type ==# 'nearest'
     let name = s:nearest_test(a:position)
     if !empty(name)
-      return [project_path, '--filter', 'FullyQualifiedName=' . name]
+      return [project_path, '--filter', name]
     else
-      return [project_path, '--filter', 'FullyQualifiedName=' . filename]
+      return [project_path, '--filter', filename]
     endif
   elseif a:type ==# 'file'
-    return [project_path,  '--filter', 'FullyQualifiedName=' . filename]
+    return [project_path,  '--filter', filename]
   else
     return [project_path]
   endif
