@@ -202,7 +202,7 @@ endfunction
 
 function! s:pretty_command(cmd) abort
   let clear = !s:Windows() ? 'clear' : 'cls'
-  let echo  = !s:Windows() ? 'echo -e '.shellescape(a:cmd) : 'Echo '.shellescape(a:cmd)
+  let echo  = !s:Windows() ? ' echo -e '.shellescape(a:cmd) : 'Echo '.shellescape(a:cmd)
   let separator = !s:Windows() ? '; ' : ' & '
 
   if !get(g:, 'test#preserve_screen')
